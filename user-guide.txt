@@ -1,0 +1,2 @@
+1) First video done 
+    search What is CDN, Cross-origin and difference between defer and async
