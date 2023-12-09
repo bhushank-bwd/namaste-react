@@ -22,3 +22,29 @@
 
     read transitive dependancy
 
+    Polufill bebel tree shaking
+    npm i babel-plugin-transform-remove-console -D, add .bebelrc file to remove specific console
+    create new build and check console exist or not
+    create start and build command
+    why keys to element
+
+    React.createElement => object -> html -> DOM 
+
+    JSX looks like html but not html 
+    JSX html difference
+
+    bebel understands JSX code code and gives normal code 
+    JSX uses React.createElement behind
+    please check 
+    bebel tool on their official website  bebeljs.io
+
+    different ways of create Component using return or ()
+    React.createElement vs JSX 
+
+    component can acces as <Component /> or {Component()}
+
+    JSX sanitize code for cross site script xss attack 
+
+    component composition  
+
+
