@@ -1,2 +1,24 @@
 1) First video done 
     search What is CDN, Cross-origin and difference between defer and async
+
+2) Ignite our app
+    # npm init -y
+    # npm i parcel -D/--save-dev
+    # npm i react react-dom
+
+    a)Check all difference, details like ^/~ in package.json/lock npm vs npx
+
+    # npx parcel index.html 
+    # npx parcel build index.html ---> will break execution so delete main from package.json and run again
+    # npx parcel index.html --https ---> serves as https://localhost
+
+    parcel what do 
+        a) HMR b) File watcher algorithm(wriitten in c++)  c) minifying,bundling d)clean code e)superfast f) dev & production build g) image optimization h)caching while development i) compression j) old browser compatibilty k) port no. manage l) consistent hash algo m) 
+        due to it ract is faster
+
+    add .parcel-cache in gitignore 
+
+    add browser list in package.json // ref https://browsersl.ist/
+
+    read transitive dependancy
+

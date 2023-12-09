@@ -1,10 +1,13 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 const headings = React.createElement(
   "h1",
   {
     key: "1",
     style: { color: "red" },
   },
-  "Hello new heading 1"
+  "Hello new heading Parcel"
 );
 const headings2 = React.createElement(
   "h1",
