@@ -11,7 +11,7 @@ const headings = React.createElement(
 );
 const headings2 = <h1 key={2}>Second heading</h1>;
 const Headings3 = () => <h2 key={3}>Third heading</h2>;
-const heading4 = () => {
+const Heading4 = () => {
   return <h4 key={3}>Fourth heading</h4>;
 };
 const DivC = () => (
@@ -21,7 +21,7 @@ const DivC = () => (
       {headings2}
       {Headings3()}
       <Headings3 />
-      <Headings4 />
+      <Heading4 />
     </div>
   </>
 );
