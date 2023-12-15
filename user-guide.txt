@@ -48,3 +48,6 @@
     component composition  
 
 
+    <React.fragement> or <> 
+    virtual DOm reconsilation react fiber tree 
+    nevwe use index as key
