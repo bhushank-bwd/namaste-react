@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RestrauntCard from "./RestrauntCard";
 import { restrauntList } from "./config";
 
 const Body = () => {
+  // add debugger in body.jsx
+
   let searchTxt = "abc"; // this is one binding that react uses, if this normal var uses react will not known when it is changed and re-render will no happen
 
   // onchange react re-renders component so hard coded value remains same for input value, this local variable is not prefered to input, it will difficult to use JS
@@ -12,13 +14,40 @@ const Body = () => {
   // [....] array destructuring also possible for use state. e.g. const state = useState(""); cosnt [a,setA] = state;
 
   const [searchText, setSearchText] = useState(""); // this changed then react reconsilation & react rerender just part of jsx where this state is used
-  const [list, setList] = useState(restrauntList);
+  const [list, setList] = useState([]);
+  const [filteredlist, setfilteredList] = useState([]);
 
   const searchHotel = () => {
-    let tempList = list.filter((element) => element.name.includes(searchText));
-    setList(tempList);
+    let tempList = list.filter((element) =>
+      element.info.name.toLowerCase().includes(searchText.toLowerCase())
+    );
+    setfilteredList(tempList);
   };
-
+  useEffect(() => {
+    console.log("This is useEffect console"); // add debugger here
+    getRestaurantList();
+  }, []);
+  const getRestaurantList = async () => {
+    let res = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=16.7035291&lng=74.2432304&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+    res = await res.json();
+    if (res) {
+      console.log(
+        res?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants[0].info
+      );
+      setList(
+        res?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
+      );
+      setfilteredList(
+        res?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
+      );
+    }
+  };
+  console.log("This is rendering console", filteredlist.length); // add debugger here
   return (
     <>
       <div className="search-container">
@@ -32,11 +61,17 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className="restraunt-list">
-        {list.map((r, index) => {
-          return <RestrauntCard restraurant={r} key={index} />;
-        })}
-      </div>
+      {filteredlist.length !== 0 ? (
+        <div className="restraunt-list">
+          {filteredlist.map((r, index) => {
+            return <RestrauntCard restraurant={r.info} key={index} />;
+          })}
+        </div>
+      ) : (
+        <div>
+          <h3>Shimmered UI</h3>
+        </div>
+      )}
     </>
   );
 };

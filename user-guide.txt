@@ -50,4 +50,48 @@
 
     <React.fragement> or <> 
     virtual DOm reconsilation react fiber tree 
-    nevwe use index as key
+    never use index as key
+    Use config driven api 
+    React is fast due to 
+        - Virtual DOM, reconsilation , tree structure update, fast DOm manupulation
+        - React fiber
+        - detect exact change in DOM and update that 
+    Only state variable tracked by React
+
+    State changes rerender component
+        try key press state change ang inspect element
+
+    Use microservices like UI, backend etc 
+
+    first load and render component and then call api and update component then
+
+
+    useEffect -> hook(function)
+              -> call with dependancy - make various dependancy combination and check in console 
+              -> uses callback function 
+              -> named import it
+              -> check with console
+
+    console log in render execute first then useEffect console then
+
+    https://www.swiggy.com/dapi/restaurants/list/v5?lat=16.7035291&lng=74.2432304&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING 
+
+    use corse chrome
+
+    use always Optional chaining e.g json?.data?.cards[2]?............
+
+    Use shimmer UI on conditional rendering 
+    use list in null initially(Early render) to avoid render null problem 
+
+    make two state that is all and filtered list
+
+    use login and logout button  on click toggle auth_token which will be boolean 
+
+    JS expression vs statement
+        Statement 
+            let a = 0;
+            console.log(a);
+        Expression 
+        {((a=10),console.log(a))} write it in JSX Curly Braces(search it on web)
+
+     

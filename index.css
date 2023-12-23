@@ -19,6 +19,7 @@
 .restraunt-list {
   display: flex;
   margin: auto;
+  overflow-x: auto;
 }
 .restraunt-list .restro-item {
   border-radius: 5px;
