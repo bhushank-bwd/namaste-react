@@ -10,6 +10,8 @@ import { Contact } from "./components/Contact";
 import { About } from "./components/About";
 import { Error } from "./components/Error";
 import { Restaurent } from "./components/Restaurent";
+import Profile from "./components/Profile";
+import AboutMain from "./components/AboutMain";
 
 // import Header, { Title } from "./components/Header.jsx"; // this {} is not object destructuring
 
@@ -34,7 +36,17 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/about", // nested path to /
-        element: <About />,
+        element: <AboutMain />,
+        children: [
+          {
+            path: "",
+            element: <About />,
+          },
+          {
+            path: "profile",
+            element: <Profile name="Bhushan" />,
+          },
+        ],
       },
       {
         path: "/contact",

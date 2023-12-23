@@ -131,3 +131,19 @@
     outlet is placeholder for route based component will goes in it
 
     api not get please add for detail page
+
+    https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+    
+    
+    
+    ComponentDidMount best place to make Api call
+
+    Normal Parent on Child Class Component
+
+    parent constructor
+    parent render
+    child constructer
+    child render
+    child componentDidMount
+    Parent componentDidMount 
