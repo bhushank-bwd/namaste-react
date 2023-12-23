@@ -132,8 +132,6 @@
 
     api not get please add for detail page
 
-    https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
-
     
     
     
@@ -146,4 +144,53 @@
     child constructer
     child render
     child componentDidMount
+    Parent componentDidMount  
+
+
+    Parent with 2 Child
+
+    parent constructor
+    parent render
+    child constructer 1
+    child render 1
+    child constructer 2
+    child render 2
+    child componentDidMount 1
+    child componentDidMount 2
     Parent componentDidMount 
+
+    this order because 
+        1) react rendering has 2 phase
+
+            Ref.    https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+            1) Render phase
+            2) Comit phase  
+                - react modify DOM
+        render phase batch chlderns & render all childern
+
+    if One parent and One child with API call
+
+    parent constructor
+    parent render
+    child constructer 1
+    child render 1
+    child componentDidMount 1 1 after that async code hold child cdm and pcdm completes & parent DOM commit
+    Parent componentDidMount 
+    {login: 'bhushank-noit', id: 138746291, node_id: 'U_kgDOCEUZsw', avatar_url: 'https://avatars.githubusercontent.com/u/138746291?v=4', gravatar_id: '', …}
+    child componentDidMount 2 1
+    child render 1
+    child componentDidUpdate 1
+
+    check why CDM has async but useEffect doesnot have async
+    
+    CDM execute once after first render
+    CDU execute after every next render of first
+
+    CWM execute after component unmount means route change and component unload
+
+    Never ever compare React Life cycle of clas component to  functional lifecycle component
+
+    Use prevProps and prevState in CDU to check state has been changed
+
+    SPA Problem 
+        eg. setInterval will continue if route changed because page is not reloaded so use CWM in class and return in useEffect to cleanup code

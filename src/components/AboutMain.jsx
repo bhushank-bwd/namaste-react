@@ -1,5 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import Profile from "./Profile";
 
 class AboutMain extends React.Component {
   constructor(props) {
@@ -13,7 +14,8 @@ class AboutMain extends React.Component {
     console.log("parent render");
     return (
       <>
-        <Outlet />
+        <Profile name="Bhushan" count="1" />
+        {/* <Profile name="Manish" count="2" /> */}
       </>
     );
   }

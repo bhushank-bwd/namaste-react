@@ -68,7 +68,7 @@ const Body = () => {
           {filteredlist.map((r, index) => {
             return (
               <Link to={`/resturant/${r.info.id}`}>
-                <RestrauntCard restraurant={r.info} key={r.info.id} />
+                <RestrauntCard restraurant={r.info} key={r.info.id + index} />
               </Link>
             );
           })}

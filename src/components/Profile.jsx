@@ -5,14 +5,38 @@ class Profile extends React.Component {
     this.state = {
       count_1: 0,
       count_2: 0,
+      user: {},
     };
-    console.log("child constructer");
+    console.log("child constructer " + this.props.count);
   }
-  componentDidMount() {
-    console.log("child componentDidMount");
+  async componentDidMount() {
+    console.log("child componentDidMount 1 " + this.props.count);
+    let res = await fetch("https://api.github.com/users/bhushank-noit");
+    res = await res.json();
+    console.log(res);
+    this.setState({
+      user: res,
+    });
+    console.log("child componentDidMount 2 " + this.props.count);
+    this.timer = setInterval(() => {
+      console.log("timer 1 on");
+    }, 1000);
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.count_1 !== prevState.count_1) {
+      console.log("count_1 changed ");
+    }
+    if (this.state.count_2 !== prevState.count_2) {
+      console.log("count_2 changed ");
+    }
+    // this if and else condition will grow more, unmanagable in functional component ther is useEffect
+    console.log("child componentDidUpdate " + this.props.count);
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer);
   }
   render() {
-    console.log("child render");
+    console.log("child render " + this.props.count);
     return (
       <>
         <h2>
