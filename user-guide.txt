@@ -94,4 +94,40 @@
         Expression 
         {((a=10),console.log(a))} write it in JSX Curly Braces(search it on web)
 
-     
+     useEffect 
+            if dependancy array don't used, it will call after each render 
+
+    Never create component in other componenet else it will add/create every time when outer component created
+
+    never write useState in if block else it will create inconsitency and react will not know that state is exists or not
+    never write useState in for loop
+    state need to create in function 
+    developer always should know exact what component does and create all state in it(for state dont use if/for)
+
+    you can use useEffect more than one  
+
+    import image by src/assets/img/file_name
+
+    there is shimmer package but don't use it 
+    inport package if needed
+    use formik 
+    make habit of create Component from scratch don't use snippets
+
+    npm i react-router-dom developed by remix
+
+    Refer routing configuration
+
+    Single Page Application (SPA)
+        not make network call from one page to another page
+
+    Tpes of routing 
+        Client Side routing
+            - all component in appln load it according requirement
+        Server Side routing
+            - all page comes from Server
+        
+    after routes check inspect render
+
+    outlet is placeholder for route based component will goes in it
+
+    api not get please add for detail page

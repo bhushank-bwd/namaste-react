@@ -28,7 +28,8 @@
   margin: 5px;
   background-color: rgb(240, 240, 240);
 }
-.restraunt-list .restro-item img {
+.restraunt-list .restro-item img,
+.details .restro-item img {
   width: 320px;
   height: 240px;
 }
@@ -41,4 +42,24 @@
 }
 .restraunt-list .restro-item .rating span {
   padding: 5px;
+}
+.shimmer {
+  display: flex;
+}
+.shimmer-card {
+  border-radius: 5px;
+  width: 320px;
+  margin: 5px;
+  height: 400px;
+  background-color: rgb(117, 114, 114);
+}
+.details {
+  display: flex;
+}
+.details .restro-item {
+  border-radius: 5px;
+  padding: 10px;
+  width: 45%;
+  margin: 10%;
+  text-align: center;
 }

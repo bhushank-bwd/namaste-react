@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import RestrauntCard from "./RestrauntCard";
 import { restrauntList } from "./config";
+import { Shimmer } from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   // add debugger in body.jsx
@@ -24,7 +26,7 @@ const Body = () => {
     setfilteredList(tempList);
   };
   useEffect(() => {
-    console.log("This is useEffect console"); // add debugger here
+    // console.log("This is useEffect console"); // add debugger here
     getRestaurantList();
   }, []);
   const getRestaurantList = async () => {
@@ -33,10 +35,6 @@ const Body = () => {
     );
     res = await res.json();
     if (res) {
-      console.log(
-        res?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants[0].info
-      );
       setList(
         res?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
@@ -45,9 +43,13 @@ const Body = () => {
         res?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
+      // console.log(
+      //   res?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+      //     ?.restaurants[2]?.info
+      // );
     }
   };
-  console.log("This is rendering console", filteredlist.length); // add debugger here
+  // console.log("This is rendering console will print first befor useEffect Console", filteredlist.length); // add debugger here
   return (
     <>
       <div className="search-container">
@@ -64,13 +66,15 @@ const Body = () => {
       {filteredlist.length !== 0 ? (
         <div className="restraunt-list">
           {filteredlist.map((r, index) => {
-            return <RestrauntCard restraurant={r.info} key={index} />;
+            return (
+              <Link to={`/resturant/${r.info.id}`}>
+                <RestrauntCard restraurant={r.info} key={r.info.id} />
+              </Link>
+            );
           })}
         </div>
       ) : (
-        <div>
-          <h3>Shimmered UI</h3>
-        </div>
+        <Shimmer />
       )}
     </>
   );
