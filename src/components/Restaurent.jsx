@@ -14,9 +14,10 @@ export const Restaurent = () => {
     <>
       {" "}
       {details ? (
-        <div className="details">
-          <div className="restro-item">
+        <div className="flex">
+          <div className="rounded-md w-[45%] p-2 m-[10%] text-center">
             <img
+              className="rounded h-96 m-auto"
               src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${details.cloudinaryImageId}`}
               alt="restro-img"
             />

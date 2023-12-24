@@ -58,19 +58,23 @@ const Body = () => {
 
   return (
     <>
-      <div className="search-container">
+      <div className="m-2">
         <input
           type="text"
-          className="search-input"
+          className="h-12 bg-slate-50 rounded m-1 px-2 focus:bg-pink-100 text-[grey] focus:outline-pink-200"
           value={searchText}
+          placeholder="restaurant name"
           onChange={(e) => setSearchText(e.target.value)}
         />
-        <button className="search-btn" onClick={searchHotel}>
+        <button
+          className="bg-blue-500 font-medium outline-none text-md text-white rounded p-2 h-12 w-24 m-1"
+          onClick={searchHotel}
+        >
           Search
         </button>
       </div>
       {filteredlist.length !== 0 ? (
-        <div className="restraunt-list">
+        <div className="restraunt-list flex overflow-x-auto m-2">
           {filteredlist.map((r, index) => {
             return (
               <Link to={`/resturant/${r.info.id}`}>

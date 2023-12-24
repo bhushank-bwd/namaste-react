@@ -6,7 +6,7 @@ export const Title = () => {
   //  this is named export, should be imported using same name
   return (
     <a href="/">
-      <img alt="logo" src={logo} />
+      <img className=" w-24 m-3" alt="logo" src={logo} />
     </a>
   );
 };
@@ -16,26 +16,27 @@ const Header = () => {
   });
   const [isLogin, setIsLogin] = useState(false);
   return (
-    <div className="nav-bar">
+    <div className="nav-bar flex justify-between bg-pink-100 shadow-lg m-1">
       <Title />
-      <ul>
-        <li>
+      <ul className="list-none flex mr-3 my-auto">
+        <li className="p-1 text-lg font-semibold">
           <Link to="/">Home</Link>
         </li>
-        <li>
+        <li className="p-1 text-lg font-semibold">
           <Link to="/about">About us</Link>
         </li>
-        <li>
+        <li className="p-1 text-lg font-semibold">
           <Link to="/">Blog</Link>
         </li>
-        <li>
+        <li className="p-1 text-lg font-semibold">
           <Link to="/contact">Contact us</Link>
         </li>
-        <li>
+        <li className="p-1 text-lg font-semibold">
           <Link to="/instamart">Instamart</Link>
         </li>
       </ul>
       <button
+        className="text-white bg-blue-600 outline-none h-12 p-2 rounded-md mx-1 my-auto hover:cursor-pointer align-middle w-20"
         onClick={() => {
           setIsLogin(!isLogin);
         }}
