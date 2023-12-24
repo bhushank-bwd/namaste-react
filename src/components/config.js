@@ -1,5 +1,7 @@
 const IMG_CDN =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+export const RESTAURANT_DETAIL_URL =
+  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=16.7035291&lng=74.2432304&restaurantId=";
 export const restrauntList = [
   {
     img: `${IMG_CDN}e33e1d3ba7d6b2bb0d45e1001b731fcf`,

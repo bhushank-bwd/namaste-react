@@ -194,3 +194,12 @@
 
     SPA Problem 
         eg. setInterval will continue if route changed because page is not reloaded so use CWM in class and return in useEffect to cleanup code
+
+    Hooks 
+        - gives readablity, reusablity modularity
+        - create hooks using with use keyword prefix, with new file for it
+    
+    when you are loading component on demand React suspends Rendering; firsttime suspends loading
+    use suspends from react 
+
+    Never ever Dynamically load any component inside another component else it is not good practice

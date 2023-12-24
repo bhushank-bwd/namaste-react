@@ -2,26 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Shimmer } from "./Shimmer";
 import "boxicons";
+import useRestaurant from "../utils/useRestaurant";
 
 export const Restaurent = () => {
   //   const params = useParams();
-  //   console.log(params);
+  //   console.log(params); destructure on fly
 
-  const { id } = useParams(); //destructure on fly
-  useEffect(() => {
-    getDetails();
-  }, []);
-  const [details, setDetails] = useState(null);
-  const getDetails = async () => {
-    // https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=16.7035291&lng=74.2432304&restaurantId=124016&catalog_qa=undefined&submitAction=ENTER
-
-    let res = await fetch(
-      `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=16.7035291&lng=74.2432304&restaurantId=${id}&catalog_qa=undefined&submitAction=ENTER`
-    );
-    res = await res.json();
-    setDetails(res?.data?.cards[0]?.card?.card?.info);
-  };
-
+  const { id } = useParams();
+  const details = useRestaurant(id);
   return (
     <>
       {" "}

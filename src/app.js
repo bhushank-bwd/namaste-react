@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header"; // you can use Header.js/jsx also
 
@@ -12,8 +12,14 @@ import { Error } from "./components/Error";
 import { Restaurent } from "./components/Restaurent";
 import Profile from "./components/Profile";
 import AboutMain from "./components/AboutMain";
+import { Shimmer } from "./components/Shimmer";
+// import { Instamart } from "./components/Instamart";
 
 // import Header, { Title } from "./components/Header.jsx"; // this {} is not object destructuring
+
+// chunking <=> Code splitting <=> Dynamic Bundling <=> lazy loading <=> on demand loading <=> dynamyc loading <=>
+
+const Instamart = lazy(() => import("./components/Instamart"));
 
 const AppLayout = () => (
   <>
@@ -55,6 +61,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/resturant/:id", // dynamic segment
         element: <Restaurent />,
+      },
+      {
+        path: "/instamart", // dynamic import
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <Instamart />
+          </Suspense>
+        ),
       },
     ],
   },

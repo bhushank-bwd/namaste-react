@@ -3,6 +3,7 @@ import RestrauntCard from "./RestrauntCard";
 import { restrauntList } from "./config";
 import { Shimmer } from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnline from "../utils/useOnline";
 
 const Body = () => {
   // add debugger in body.jsx
@@ -50,6 +51,11 @@ const Body = () => {
     }
   };
   // console.log("This is rendering console will print first befor useEffect Console", filteredlist.length); // add debugger here
+
+  const isOnline = useOnline();
+
+  if (!isOnline) return <div>Internet is off</div>;
+
   return (
     <>
       <div className="search-container">

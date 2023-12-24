@@ -31,6 +31,9 @@ const Header = () => {
         <li>
           <Link to="/contact">Contact us</Link>
         </li>
+        <li>
+          <Link to="/instamart">Instamart</Link>
+        </li>
       </ul>
       <button
         onClick={() => {
