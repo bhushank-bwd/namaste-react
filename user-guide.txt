@@ -203,3 +203,11 @@
     use suspends from react 
 
     Never ever Dynamically load any component inside another component else it is not good practice
+
+
+    styling ways in react 
+    1) index css 2) scss & sass 3) inline css 4) Material Ui and other framework 5) tailwind 
+     pros and cons
+
+    state vs Props
+    props drilling

@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import RestrauntCard from "./RestrauntCard";
-import { restrauntList } from "./config";
 import { Shimmer } from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   // add debugger in body.jsx
@@ -19,7 +19,7 @@ const Body = () => {
   const [searchText, setSearchText] = useState(""); // this changed then react reconsilation & react rerender just part of jsx where this state is used
   const [list, setList] = useState([]);
   const [filteredlist, setfilteredList] = useState([]);
-
+  const { user, setUser } = useContext(UserContext);
   const searchHotel = () => {
     let tempList = list.filter((element) =>
       element.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -72,6 +72,13 @@ const Body = () => {
         >
           Search
         </button>
+        <input
+          type="text"
+          className="h-12 bg-slate-50 rounded m-1 px-2 focus:bg-pink-100 text-[grey] focus:outline-pink-200"
+          value={user.name}
+          placeholder="restaurant name"
+          onChange={(e) => setUser({ ...user, name: e.target.value })}
+        />
       </div>
       {filteredlist.length !== 0 ? (
         <div className="restraunt-list flex overflow-x-auto m-2">

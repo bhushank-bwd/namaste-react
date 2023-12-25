@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import UserContext from "../utils/UserContext";
 
-const Instamart = () => {
+export const Blank = () => {
   const { user } = useContext(UserContext);
-  return <div>Instamart by {user.name}</div>;
+  return <h1>{user.name}</h1>;
 };
-export default Instamart;

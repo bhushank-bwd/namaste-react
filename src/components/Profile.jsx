@@ -18,9 +18,9 @@ class Profile extends React.Component {
       user: res,
     });
     console.log("child componentDidMount 2 " + this.props.count);
-    this.timer = setInterval(() => {
-      console.log("timer 1 on");
-    }, 1000);
+    // this.timer = setInterval(() => {
+    //   console.log("timer 1 on");
+    // }, 1000);
   }
   componentDidUpdate(prevProps, prevState) {
     if (this.state.count_1 !== prevState.count_1) {
@@ -33,7 +33,7 @@ class Profile extends React.Component {
     console.log("child componentDidUpdate " + this.props.count);
   }
   componentWillUnmount() {
-    clearInterval(this.timer);
+    // clearInterval(this.timer);
   }
   render() {
     console.log("child render " + this.props.count);

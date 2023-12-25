@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header"; // you can use Header.js/jsx also
 
@@ -13,6 +13,8 @@ import { Restaurent } from "./components/Restaurent";
 import Profile from "./components/Profile";
 import AboutMain from "./components/AboutMain";
 import { Shimmer } from "./components/Shimmer";
+import { Blank } from "./components/Blank";
+import UserContext from "./utils/UserContext";
 // import { Instamart } from "./components/Instamart";
 
 // import Header, { Title } from "./components/Header.jsx"; // this {} is not object destructuring
@@ -21,14 +23,22 @@ import { Shimmer } from "./components/Shimmer";
 
 const Instamart = lazy(() => import("./components/Instamart"));
 
-const AppLayout = () => (
-  <>
-    {/* <Navbar.Header /> */}
-    <Header />
-    <Outlet />
-    <Footer />
-  </>
-);
+const AppLayout = () => {
+  const [user, setUser] = useState({
+    name: "Bhushan",
+    email: "bhushank.bwd@gmail.com",
+  });
+  return (
+    <>
+      <Blank />
+      <UserContext.Provider value={{ user, setUser }}>
+        <Header />
+        <Outlet />
+        <Footer />
+      </UserContext.Provider>
+    </>
+  );
+};
 const appRouter = createBrowserRouter([
   // always use after applayout
   {
