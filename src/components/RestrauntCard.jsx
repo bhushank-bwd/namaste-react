@@ -3,6 +3,7 @@ import "boxicons";
 const RestrauntCard = ({ restraurant }) => {
   const { cloudinaryImageId, name, avgRating, areaName, cuisines } =
     restraurant;
+  console.log(restraurant, "restr");
   return (
     <div className="rounded-md p-2 w-80 m-1 shadow-lg bg-pink-100 h-[26rem]">
       <img

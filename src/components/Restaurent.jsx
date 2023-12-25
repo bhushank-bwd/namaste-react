@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { Shimmer } from "./Shimmer";
 import "boxicons";
 import useRestaurant from "../utils/useRestaurant";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 export const Restaurent = () => {
   //   const params = useParams();
@@ -10,6 +12,10 @@ export const Restaurent = () => {
 
   const { id } = useParams();
   const details = useRestaurant(id);
+  const dispatch = useDispatch();
+  const addToCart = () => {
+    dispatch(addItem(details));
+  };
   return (
     <>
       {" "}
@@ -28,6 +34,12 @@ export const Restaurent = () => {
             </h3>
             <h3>{details.cuisines.join(", ")}</h3>
             <h4>{details.areaName}</h4>
+            <button
+              className="bg-blue-500 font-medium outline-none text-md text-white rounded p-2 h-12 w-32 mb-0"
+              onClick={addToCart}
+            >
+              Add To Cart
+            </button>
           </div>
           <div className="restro-item">
             <ul></ul>

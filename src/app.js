@@ -15,6 +15,9 @@ import AboutMain from "./components/AboutMain";
 import { Shimmer } from "./components/Shimmer";
 import { Blank } from "./components/Blank";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import store from "./utils/store";
+import { Cart } from "./components/Cart";
 // import { Instamart } from "./components/Instamart";
 
 // import Header, { Title } from "./components/Header.jsx"; // this {} is not object destructuring
@@ -31,11 +34,13 @@ const AppLayout = () => {
   return (
     <>
       <Blank />
-      <UserContext.Provider value={{ user, setUser }}>
-        <Header />
-        <Outlet />
-        <Footer />
-      </UserContext.Provider>
+      <Provider store={store}>
+        <UserContext.Provider value={{ user, setUser }}>
+          <Header />
+          <Outlet />
+          <Footer />
+        </UserContext.Provider>
+      </Provider>
     </>
   );
 };
@@ -71,6 +76,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/resturant/:id", // dynamic segment
         element: <Restaurent />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
       {
         path: "/instamart", // dynamic import

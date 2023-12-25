@@ -211,3 +211,20 @@
 
     state vs Props
     props drilling
+
+    Redux -> Data Mnagement for scalable large project 
+          -> Single stor with different slices
+
+    component can't directloy change store data, it uses dispatch action -> will call function -> this function(i.e. reducer) will modify store 
+
+    if we click on button it dispach action which call reducer function which updates slice of store
+
+    selector -> read data
+
+    + -> dispatch actiob -> reducer -> updates store(slice) -> selector(it is hook, also known as subscribe to store) -> cart 
+
+    npm i @reduxjs/toolkit // core of redux 
+    npm i react-redux // bridge beetween react and redux 
+
+
+    

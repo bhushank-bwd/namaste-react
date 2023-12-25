@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import logo from "../assets/img/the-food-villa-5873411.webp";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export const Title = () => {
   //  this is named export, should be imported using same name
@@ -11,6 +12,8 @@ export const Title = () => {
   );
 };
 const Header = () => {
+  const { items } = useSelector((store) => store.cart);
+  console.log(items);
   useEffect(() => {
     console.log("This is called without denedancy array");
   });
@@ -33,6 +36,11 @@ const Header = () => {
         </li>
         <li className="p-1 text-lg font-semibold">
           <Link to="/instamart">Instamart</Link>
+        </li>
+        <li className="p-1 text-lg font-semibold">
+          <Link to="/cart">
+            Cart {items.length > 0 ? items.length + " items " : ""}
+          </Link>
         </li>
       </ul>
       <button
