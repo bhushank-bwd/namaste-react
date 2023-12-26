@@ -1,0 +1,49 @@
+Developer Testing 
+    
+    1) Manual testing 
+    2) A small change will impact/ introduce a bug any where in project
+
+    3) Types of testing (for developer)
+        - unit testing
+        - integration testing
+        - end to end testing (e2e testing)
+        
+        - first two will be for developer important
+
+    4) Unit testing 
+         - Test react component in isolation
+         - one unit => component , only test at a time
+        
+    5) Integration testing 
+        - multiple components involves, talk to each other, event handling involved, eg. test search feature of project
+
+    6) e2e testing 
+        - from user landing to first page to checkout his order, end to end user journy in different use case
+
+    7) tools need to test 
+    
+    8) Search for react test libraries 
+        for create react app may be testing library already exists in Application
+
+        - React Testing Library (RTLb) uses JEST -> delightful JS testing Framework (simple)
+
+    9) setup
+
+        # npm i -D @testing-library/react
+        # npm i -D jest 
+
+        if you are using with bebel install dependancy , go to jest site and get it
+            # npm install --save-dev babel-jest @babel/core @babel/preset-env
+        bebel.config.js create file at root using jest site
+
+    10) Parcel uses bebel behind scene, may be conflict above testing bebel conf. with parcel bebel conf
+        so got parcel site & search JEST -> Javascript got to bebel read this 
+
+        create .parcelrc file in root 
+
+        this will use test bebel and no conflict will got
+        this will disable default bebel transpilation
+
+    11) in test write jest in test command and npm run test
+
+            if no test found then test setup done successfully
