@@ -47,3 +47,21 @@ Developer Testing
     11) in test write jest in test command and npm run test
 
             if no test found then test setup done successfully
+
+    12) jest configuration 
+            # npx jest --init 
+            inputs 
+                TS => no 
+                test-env => JSDOM 
+                    when test cases run it is not browser or server, there is need of runtime env so JSDOM is used like broswer which will give broswer like feature
+                coverage report - babel 
+                automatic clear => yes
+
+            this will create js config file 
+            if jest is higher than 28/more install npm i -D jest-environment-jsdom get from RTLb 
+
+    13) Run JS test ie. dummy test 
+         create sum.js and sum.test.js in __tests__ folder
+         __tests__ is dunder may be reserved keywords because nobody create accidently this type of folder 
+         
+             
