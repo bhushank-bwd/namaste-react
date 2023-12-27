@@ -63,5 +63,14 @@ Developer Testing
     13) Run JS test ie. dummy test 
          create sum.js and sum.test.js in __tests__ folder
          __tests__ is dunder may be reserved keywords because nobody create accidently this type of folder 
-         
+
              
+    all this setup may not needed in create-react-app application this will know testing setup in detail
+
+    if don't write assertion/empty function it will pass test so always have assertion
+
+    14) test cases of react
+        to avoid jsx syntax error please 
+            # npm i @babel/preset-react
+
+            run npm i -D @testing-library/jest-dom to tobedoc for render & screen
