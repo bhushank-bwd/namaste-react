@@ -74,3 +74,9 @@ Developer Testing
             # npm i @babel/preset-react
 
             run npm i -D @testing-library/jest-dom to tobedoc for render & screen
+
+    15) testing with redux
+        render with give error because of useSelector Please Provide store to it
+        it will again give error because of <Link> please provide browser router
+
+    16) search for higher order component
