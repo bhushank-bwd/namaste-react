@@ -3,9 +3,11 @@ import "boxicons";
 const RestrauntCard = ({ restraurant }) => {
   const { cloudinaryImageId, name, avgRating, areaName, cuisines } =
     restraurant;
-  console.log(restraurant, "restr");
   return (
-    <div className="rounded-md p-2 w-80 m-1 shadow-lg bg-pink-100 h-[26rem]">
+    <div
+      className="rounded-md p-2 w-80 m-1 shadow-lg bg-pink-100 h-[26rem]"
+      data-testid="rCarditem"
+    >
       <img
         className="w-80 h-60 rounded"
         src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}`}

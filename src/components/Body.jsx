@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
 import UserContext from "../utils/UserContext";
 
-const Body = () => {
+const BodyDiv = () => {
   // add debugger in body.jsx
 
   let searchTxt = "abc"; // this is one binding that react uses, if this normal var uses react will not known when it is changed and re-render will no happen
@@ -35,7 +35,7 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=16.7035291&lng=74.2432304&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     res = await res.json();
-    console.log(res?.data?.cards[4]);
+    // console.log(res);
     if (res) {
       setList(
         res?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
@@ -62,6 +62,7 @@ const Body = () => {
       <div className="m-2">
         <input
           type="text"
+          data-testid="search-input"
           className="h-12 bg-slate-50 rounded m-1 px-2 focus:bg-pink-100 text-[grey] focus:outline-pink-200"
           value={searchText}
           placeholder="restaurant name"
@@ -85,8 +86,8 @@ const Body = () => {
         <div className="restraunt-list flex overflow-x-auto m-2">
           {filteredlist?.map((r, index) => {
             return (
-              <Link to={`/resturant/${r.info.id}`}>
-                <RestrauntCard restraurant={r.info} key={r.info.id + index} />
+              <Link to={`/resturant/${r.info.id}`} key={r.info.id + index}>
+                <RestrauntCard restraurant={r.info} />
               </Link>
             );
           })}
@@ -98,4 +99,4 @@ const Body = () => {
   );
 };
 
-export default Body;
+export default BodyDiv;
