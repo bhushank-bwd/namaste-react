@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import logo from "../assets/img/the-food-villa-5873411.webp";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -7,7 +6,11 @@ export const Title = () => {
   //  this is named export, should be imported using same name
   return (
     <a href="/">
-      <img className=" w-24 m-3" alt="logo" src={logo} />
+      <img
+        className=" w-24 m-3"
+        alt="logo"
+        src="https://files.yappe.in/place/full/the-food-villa-5873411.webp"
+      />
     </a>
   );
 };
@@ -39,7 +42,7 @@ const Header = () => {
         </li>
         <li className="p-1 text-lg font-semibold">
           <Link to="/cart">
-            Cart {items.length > 0 ? items.length + " items " : ""}
+            Cart {items.length > 0 ? items.length + " items " : " 0 "}
           </Link>
         </li>
       </ul>

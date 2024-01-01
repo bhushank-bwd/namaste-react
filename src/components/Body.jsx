@@ -35,13 +35,14 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=16.7035291&lng=74.2432304&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     res = await res.json();
+    console.log(res?.data?.cards[4]);
     if (res) {
       setList(
-        res?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+        res?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
       setfilteredList(
-        res?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+        res?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
       // console.log(
@@ -80,9 +81,9 @@ const Body = () => {
           onChange={(e) => setUser({ ...user, name: e.target.value })}
         />
       </div>
-      {filteredlist.length !== 0 ? (
+      {filteredlist?.length !== 0 ? (
         <div className="restraunt-list flex overflow-x-auto m-2">
-          {filteredlist.map((r, index) => {
+          {filteredlist?.map((r, index) => {
             return (
               <Link to={`/resturant/${r.info.id}`}>
                 <RestrauntCard restraurant={r.info} key={r.info.id + index} />
