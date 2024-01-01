@@ -16,7 +16,7 @@ export const Title = () => {
 };
 const Header = () => {
   const { items } = useSelector((store) => store.cart);
-  console.log(items);
+  // console.log(items);
   useEffect(() => {
     console.log("This is called without denedancy array");
   });

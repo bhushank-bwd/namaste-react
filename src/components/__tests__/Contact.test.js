@@ -3,6 +3,18 @@ import { Contact } from "../Contact";
 import "@testing-library/jest-dom";
 
 describe("group similar test together", () => {
+  // beforeAll(() => {
+  //   console.log("Before All");
+  // });
+  // beforeEach(() => {
+  //   console.log("beforeEach");
+  // });
+  // afterAll(() => {
+  //   console.log("After All");
+  // });
+  // afterEach(() => {
+  //   console.log("After each");
+  // });
   it("test contact header", () => {
     render(<Contact />);
     const heading = screen.getByRole("heading"); // use another keyword to find instead of heading// this quering
